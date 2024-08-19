@@ -1,0 +1,37 @@
+// AllProducts.scss
+
+@import "../../css-config/mixins.scss";
+
+.all-products-main-content {
+    padding: 20px;
+  }
+  
+  .layout {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .all-products-heading {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  .products-container {
+    margin-top: 20px;
+  }
+  
+  .sec-heading {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .products {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+  }
+  
+  // You can include additional styling for the Product component if needed
+  

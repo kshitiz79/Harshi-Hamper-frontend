@@ -1,0 +1,60 @@
+@import "../../../css-config/mixins.scss";
+
+.shop-by-category {
+    margin: 25px 0;
+
+    @include md {
+        margin: 10px 0;
+    }
+
+    .categories {
+        display: flex;
+        flex-flow: wrap;
+        gap: 35px; /* Increase the gap between cards to 20px */
+
+        .category {
+            width: calc(10% - 4px);
+            cursor: pointer;
+            overflow: hidden;
+            position: relative;
+            border-radius: 100px; /* 75% smaller rounded corners */
+            transition: transform 0.3s, border-radius 0.3s; /* Add transitions */
+
+            @include md {
+                width: calc(23% - 10px);
+            }
+
+            &::before {
+                content: "";
+                display: block;
+                padding-top: 100%; /* Maintain 1:1 aspect ratio for a circle */
+                background: linear-gradient(45deg, #ff8a00, #e52e71); /* Gradient border */
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                border-radius: 2px; /* 75% smaller rounded corners */
+                z-index: -1; /* Move behind the image */
+                transition: opacity 0.3s ease; /* Add opacity transition */
+            }
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover; /* Ensure the image covers the entire frame */
+                border-radius: 2px; /* 75% smaller rounded corners */
+                transition: transform ease 0.3s;
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
+            }
+
+            &:hover {
+                transform: scale(1.1);
+                border-radius: 1px; /* Further reduce the border-radius on hover */
+                &::before {
+                    opacity: 0; /* Hide the gradient border on hover */
+                }
+            }
+        }
+    }
+}
